@@ -1,14 +1,11 @@
 package com.dim.tsinjo.repository.model;
 
-import com.dim.tsinjo.model.Beneficiary;
-import com.dim.tsinjo.model.Payment;
 import jakarta.persistence.*;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.UUID;
 
 @Entity
 @NoArgsConstructor
@@ -16,15 +13,15 @@ import java.util.UUID;
 @Setter
 @Getter
 public class JHelp {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private UUID id;
 
-    @OneToOne
-    @JoinColumn(name = "help_beneficiary_id")
-    private JBeneficiary helpBeneficiary;
+  @OneToOne
+  @JoinColumn(name = "help_beneficiary_id")
+  private JBeneficiary helpBeneficiary;
 
-    @OneToOne(optional = false)
-    @JoinColumn(name = "payment_id")
-    private JPayment payment;
+  @OneToOne(optional = false)
+  @JoinColumn(name = "payment_id")
+  private JPayment payment;
 }

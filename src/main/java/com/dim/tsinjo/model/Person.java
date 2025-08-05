@@ -10,6 +10,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Person {
-    private String email;
-    private String fullname;
+  private String email;
+  private String fullname;
 }
