@@ -1,6 +1,5 @@
 package com.dim.tsinjo.repository.model;
 
-import com.dim.tsinjo.model.Don;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,16 +11,16 @@ import lombok.Setter;
 @AllArgsConstructor
 @Setter
 @Getter
-public class JDon extends Don {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+public class JDon {
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private String id;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "donor_id")
-    private JDonor donor;
+  @ManyToOne(optional = false)
+  @JoinColumn(name = "donor_id")
+  private JDonor donor;
 
-    @OneToOne(optional = false)
-    @JoinColumn(name = "payment_id")
-    private JPayment payment;
+  @OneToOne(optional = false)
+  @JoinColumn(name = "payment_id")
+  private JPayment payment;
 }

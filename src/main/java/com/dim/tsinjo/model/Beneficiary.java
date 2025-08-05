@@ -9,5 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Beneficiary extends Person {
+public class Beneficiary {
+  private String email;
+  private String fullname;
 }

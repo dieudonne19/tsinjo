@@ -5,8 +5,4 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class TsinjoService {
-
-
-
-}
+public class TsinjoService {}
