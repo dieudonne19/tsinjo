@@ -1,9 +1,8 @@
 package com.dim.tsinjo.repository.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.dim.tsinjo.model.Beneficiary;
+import com.dim.tsinjo.model.Payment;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,4 +19,12 @@ public class JHelp {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+    @OneToOne
+    @JoinColumn(name = "help_beneficiary_id")
+    private JBeneficiary helpBeneficiary;
+
+    @OneToOne(optional = false)
+    @JoinColumn(name = "payment_id")
+    private JPayment payment;
 }
